@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<VBox fx:controller="com.spacekeeperfx.ui.SubspaceTableController"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      spacing="12" styleClass="content" fillWidth="true">
+    <padding><Insets top="16" right="16" bottom="16" left="16"/></padding>
+
+    <HBox alignment="CENTER_LEFT">
+        <Label fx:id="subspaceNameLabel" text="General" styleClass="subtitle"/>
+        <Region HBox.hgrow="ALWAYS"/>
+    </HBox>
+
+    <!-- Card fills all remaining space -->
+    <StackPane styleClass="card" VBox.vgrow="ALWAYS" maxWidth="Infinity" maxHeight="Infinity">
+        <TableView fx:id="table" editable="true" maxWidth="Infinity" maxHeight="Infinity">
+            <placeholder><Label text="No records yet"/></placeholder>
+        </TableView>
+    </StackPane>
+</VBox>

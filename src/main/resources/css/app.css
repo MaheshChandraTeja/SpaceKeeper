@@ -1,0 +1,36 @@
+/* Root titlebar container */
+.sk-titlebar {
+  -fx-background-color: rgba(255,255,255,0.03);
+  -fx-border-color: rgba(255,255,255,0.06);
+  -fx-border-width: 0 0 1 0;
+  -fx-padding: 8 10 8 10;
+  -fx-spacing: 8;
+  -fx-alignment: CENTER_LEFT;
+}
+
+/* Title text */
+.sk-titlebar .titlebar-title {
+  -fx-text-fill: rgba(255,255,255,0.92);
+  -fx-font-size: 13px;
+  -fx-font-weight: 600;
+}
+
+/* System buttons */
+.sk-titlebar .titlebar-btn {
+  -fx-background-color: transparent;
+  -fx-border-color: transparent;
+  -fx-background-radius: 8;
+  -fx-border-radius: 8;
+  -fx-padding: 0 10 0 10;
+
+  /* kill Modena focus halo only inside titlebar */
+  -fx-text-fill: rgba(255,255,255,0.86);
+  -fx-focus-color: transparent;
+  -fx-faint-focus-color: transparent;
+
+  -fx-text-fill: -fx-text-base-color;
+
+}
+.sk-titlebar .titlebar-btn:hover   { -fx-background-color: rgba(255,255,255,0.10); }
+.sk-titlebar .titlebar-btn:pressed { -fx-background-color: rgba(255,255,255,0.16); }
+.sk-titlebar .close:hover          { -fx-background-color: #ff4b57; -fx-text-fill: white; }

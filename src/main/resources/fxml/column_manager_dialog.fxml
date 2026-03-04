@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Column Manager Dialog -->
+<AnchorPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.spacekeeperfx.ui.ColumnManagerController"
+            styleClass="dialog-surface">
+
+    <children>
+        <!-- Toolbar -->
+        <HBox spacing="8"
+              AnchorPane.topAnchor="16.0"
+              AnchorPane.leftAnchor="16.0"
+              AnchorPane.rightAnchor="16.0">
+            <Button text="+ Text"        onAction="#onAddText"/>
+            <Button text="+ Number"      onAction="#onAddNum"/>
+            <Button text="+ Photo"       onAction="#onAddPhoto"/>
+
+            <Separator orientation="VERTICAL"/>
+
+            <Button text="Remove"          onAction="#onRemove"/>
+            <Button text="Enable/Disable"  onAction="#onToggleEnable"/>
+
+            <Separator orientation="VERTICAL"/>
+
+            <Button text="↑"               onAction="#onUp"/>
+            <Button text="↓"               onAction="#onDown"/>
+
+            <Pane HBox.hgrow="ALWAYS"/>
+        </HBox>
+
+        <!-- The list that was missing / not filling the dialog -->
+        <ListView fx:id="list"
+                  AnchorPane.topAnchor="56.0"
+                  AnchorPane.leftAnchor="16.0"
+                  AnchorPane.rightAnchor="16.0"
+                  AnchorPane.bottomAnchor="16.0"/>
+    </children>
+</AnchorPane>

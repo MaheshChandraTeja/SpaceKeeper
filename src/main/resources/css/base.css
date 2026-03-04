@@ -1,0 +1,314 @@
+/* ============================================================================
+   SpaceKeeperFX — Lusion-esque Light Theme (matches dark.css structure)
+   ============================================================================ */
+
+.root {
+  /* core palette (light) */
+  -ink-0:    #f7f8fc;   /* page bg */
+  -ink-1:    #ffffff;   /* surface */
+  -ink-2:    #f3f5fb;   /* surface+1 */
+  -ink-3:    #e6e9f2;   /* borders */
+  -text-1:   #0f172a;   /* primary text */
+  -text-2:   #64748b;   /* muted text */
+
+  /* accents */
+  -acc-1:    #2563eb;   /* blue */
+  -acc-2:    #8b5cf6;   /* purple */
+  -acc-3:    #10b981;   /* teal/green */
+  -danger-1: #ef4444;
+  -danger-2: #dc2626;
+
+  -fx-background-color: -ink-0;
+  -fx-text-fill: -text-1;
+  -fx-font-family: "Inter", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -fx-font-size: 13px;
+}
+
+/* ---- Base containers -------------------------------------------------------- */
+.border-pane, .anchor-pane, .stack-pane, .split-pane, .vbox, .hbox {
+  -fx-background-color: transparent;
+}
+.app-root { -fx-background-color: -ink-0; }
+.content-wrap { -fx-background-color: transparent; }
+
+/* ---- Subtle “aurora” overlays to echo dark theme ---------------------------- */
+.app-root, .content-wrap, .sidebar, .toolbar, .card, .dialog {
+  -fx-background-insets: 0, 0;
+  -fx-background-color:
+    linear-gradient(to bottom right, rgba(37, 99, 235, 0.08), rgba(139, 92, 246, 0.06)),
+    -ink-1;
+}
+
+/* ---- Title / Branding ------------------------------------------------------- */
+.label.app-title {
+  -fx-font-size: 26px;
+  -fx-font-weight: 900;
+  -fx-text-fill: linear-gradient(to right, -acc-1, -acc-2);
+  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 24, 0.25, 0, 2);
+}
+
+/* ---- Top Toolbar ------------------------------------------------------------ */
+.toolbar {
+  -fx-padding: 10 14 10 14;
+  -fx-background-color:
+      linear-gradient(to bottom, rgba(255,255,255,0.85), rgba(247,248,252,0.85)),
+      -ink-1;
+  -fx-border-color: rgba(8,16,40,0.10);
+  -fx-border-width: 0 0 1 0;
+  -fx-background-radius: 0;
+}
+.toolbar .separator:vertical { -fx-padding: 0 8 0 8; }
+
+/* ---- Buttons --------------------------------------------------------------- */
+.button {
+  -fx-background-radius: 12px;
+  -fx-border-radius: 12px;
+  -fx-padding: 6 12 6 12;
+  -fx-text-fill: -text-1;
+  -fx-background-color:
+    linear-gradient(to bottom right, rgba(243,245,251,0.75), rgba(250,251,255,0.75)),
+    -ink-2;
+  -fx-border-color: rgba(8,16,40,0.08);
+}
+.button:hover {
+  -fx-background-color:
+    linear-gradient(to bottom right, rgba(238,241,250,0.9), rgba(245,247,254,0.9)),
+    -ink-2;
+}
+.button:focused { -fx-border-color: -acc-1; }
+
+/* Primary */
+.button.primary {
+  -fx-text-fill: white;
+  -fx-border-color: transparent;
+  -fx-background-color: linear-gradient(to bottom right, -acc-1, -acc-2);
+}
+.button.primary:hover { -fx-opacity: 0.95; }
+
+/* Ghost */
+.button.ghost {
+  -fx-background-color: transparent;
+  -fx-border-color: rgba(8,16,40,0.10);
+}
+.button.ghost:hover { -fx-background-color: rgba(8,16,40,0.035); }
+
+/* Danger */
+.button.danger {
+  -fx-background-color: -danger-1;
+  -fx-border-color: transparent;
+  -fx-text-fill: white;
+}
+.button.danger:hover { -fx-background-color: -danger-2; }
+
+/* Icon-ish button */
+.button.icon-btn {
+  -fx-background-color: transparent;
+  -fx-border-color: transparent;
+  -fx-text-fill: -text-2;
+  -fx-padding: 4 8 4 8;
+  -fx-background-radius: 10px;
+  -fx-border-radius: 10px;
+}
+.button.icon-btn:hover {
+  -fx-text-fill: -text-1;
+  -fx-background-color: rgba(8,16,40,0.05);
+}
+
+/* Optional: make the theme toggle look nice */
+.button.theme-toggle {
+  -fx-padding: 4 10 4 10;
+  -fx-font-weight: 700;
+}
+
+/* ---- Sidebar --------------------------------------------------------------- */
+.sidebar {
+  -fx-padding: 12;
+  -fx-background-color:
+      linear-gradient(to bottom, rgba(37,99,235,0.05), rgba(139,92,246,0.04)),
+      -ink-1;
+  -fx-border-color: rgba(8,16,40,0.10);
+  -fx-border-width: 0 1 0 0;
+}
+.sidebar .label.muted {
+  -fx-text-fill: -text-2;
+  -fx-font-weight: 700;
+  -fx-padding: 0 0 8 4;
+}
+
+/* Clean list */
+.nav-list, .list-plain {
+  -fx-background-color: transparent;
+  -fx-control-inner-background: transparent;
+  -fx-padding: 4 0 0 0;
+}
+.nav-list .list-cell, .list-plain .list-cell {
+  -fx-background-color: transparent;
+  -fx-text-fill: -text-2;
+  -fx-padding: 8 10 8 12;
+  -fx-background-radius: 10px;
+  -fx-border-radius: 10px;
+  -fx-border-color: transparent;
+}
+.nav-list .list-cell:hover, .list-plain .list-cell:hover {
+  -fx-background-color: rgba(8,16,40,0.05);
+}
+.nav-list .list-cell:selected, .list-plain .list-cell:selected {
+  -fx-background-color:
+      linear-gradient(to right, rgba(37,99,235,0.18), rgba(139,92,246,0.18));
+  -fx-text-fill: -text-1;
+  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 14, 0.20, 0, 2);
+}
+
+/* ---- Card / Content wrapper ------------------------------------------------- */
+.card {
+  -fx-background-color:
+      linear-gradient(to bottom right, rgba(37,99,235,0.06), rgba(139,92,246,0.04)),
+      -ink-1;
+  -fx-background-radius: 14px;
+  -fx-border-radius: 14px;
+  -fx-border-color: rgba(8,16,40,0.10);
+  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 26, 0.25, 0, 8);
+  -fx-padding: 10;
+}
+
+/* ---- TableView -------------------------------------------------------------- */
+.table-view {
+  -fx-background-color:
+      linear-gradient(to bottom, rgba(255,255,255,0.94), rgba(250,251,255,0.94)),
+      -ink-1;
+  -fx-background-insets: 0, 0;
+  -fx-background-radius: 14px;
+  -fx-border-radius: 14px;
+  -fx-border-color: rgba(8,16,40,0.10);
+  -fx-padding: 6;
+  -fx-control-inner-background: -ink-1;
+  -fx-control-inner-background-alt: -ink-1;
+}
+.table-view:focused { -fx-border-color: rgba(37,99,235,0.55); }
+
+.table-view .column-header-background {
+  -fx-background-color:
+      linear-gradient(to bottom, rgba(255,255,255,0.98), rgba(247,248,252,0.98));
+  -fx-border-color: rgba(8,16,40,0.10);
+  -fx-border-width: 0 0 1 0;
+  -fx-background-radius: 14px 14px 0 0;
+}
+.table-view .column-header, .table-view .filler {
+  -fx-background-color: transparent;
+}
+.table-view .column-header .label {
+  -fx-text-fill: -text-2;
+  -fx-font-weight: 700;
+  -fx-padding: 6 8 6 8;
+}
+
+/* rows + cells */
+.table-row-cell                 { -fx-background-color: transparent; }
+.table-row-cell:odd             { -fx-background-color: rgba(8,16,40,0.025); } /* subtle, not bright */
+.table-row-cell:selected        {
+  -fx-background-color: rgba(37,99,235,0.18);
+  -fx-text-fill: -text-1;
+}
+.table-cell {
+  -fx-padding: 8 10 8 10;
+  -fx-border-color: transparent transparent rgba(8,16,40,0.09) transparent;
+  -fx-border-width: 0 0 1 0;
+  -fx-text-fill: -text-1;
+  -fx-alignment: CENTER_LEFT;
+  -fx-text-overrun: word-ellipsis;
+}
+
+/* photo cell helpers */
+.photo-cell, .photo-thumb {
+  -fx-alignment: CENTER;
+  -fx-background-color: transparent;
+  -fx-padding: 6 0 6 0;
+}
+.photo-thumb {
+  -fx-background-radius: 10px;
+  -fx-border-radius: 10px;
+  -fx-border-color: rgba(8,16,40,0.10);
+}
+
+/* ---- Dialogs (Column Manager etc.) ----------------------------------------- */
+.dialog, .dialog-pane, .dialog-surface {
+  -fx-background-color:
+      linear-gradient(to bottom right, rgba(37,99,235,0.06), rgba(139,92,246,0.05)),
+      -ink-1;
+  -fx-background-radius: 14px;
+  -fx-border-radius: 14px;
+  -fx-border-color: rgba(8,16,40,0.12);
+  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 22, 0.25, 0, 6);
+}
+.dialog .button-bar .button,
+.dialog-pane .button-bar .button {
+  -fx-background-radius: 10px;
+}
+
+/* ---- Status bar ------------------------------------------------------------- */
+.statusbar, .hbox.statusbar {
+  -fx-background-color:
+      linear-gradient(to bottom, rgba(255,255,255,0.85), rgba(247,248,252,0.85)),
+      -ink-1;
+  -fx-border-color: rgba(8,16,40,0.10);
+  -fx-border-width: 1 0 0 0;
+}
+
+/* ---- SplitPane divider (sidebar / table separator) -------------------------- */
+.split-pane:horizontal > .split-pane-divider {
+  -fx-background-color:
+      linear-gradient(to bottom, rgba(37,99,235,0.35), rgba(139,92,246,0.35));
+  -fx-opacity: 0.35;
+  -fx-padding: 0 1px 0 1px;
+}
+.split-pane:horizontal > .split-pane-divider:hover { -fx-opacity: 0.65; }
+
+/* Optional “collapse” chip inside divider (same class used in dark.css) */
+.split-pane-divider .split-toggle {
+  -fx-background-color: rgba(0,72,255,0.08), rgba(0,0,0,0.02);
+  -fx-background-insets: 0, 1;
+  -fx-background-radius: 10;
+  -fx-text-fill: #1f3a8a;
+  -fx-font-size: 14px;
+  -fx-padding: 4 7;
+  -fx-cursor: hand;
+  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 10, 0.25, 0, 2);
+}
+.split-pane-divider .split-toggle:hover {
+  -fx-background-color: rgba(0,72,255,0.14), rgba(0,0,0,0.04);
+  -fx-text-fill: -text-1;
+}
+
+/* ---- Utility labels --------------------------------------------------------- */
+.label.title    { -fx-font-size: 18px; -fx-font-weight: 800; }
+.label.subtitle { -fx-font-size: 14px; -fx-font-weight: 600; -fx-text-fill: -text-2; }
+.label.muted    { -fx-text-fill: -text-2; }
+
+/* Theme toggle "chip" – light */
+.toggle-theme {
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 999;
+    -fx-padding: 6 12;
+    -fx-font-size: 13px;
+    -fx-background-color:
+        linear-gradient(to bottom right, rgba(120,140,255,0.25), rgba(120,140,255,0.08)),
+        rgba(0,0,0,0.04);
+    -fx-text-fill: #2b3258;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 8, 0.2, 0, 2);
+    -fx-cursor: hand;
+}
+
+.toggle-theme:hover {
+    -fx-background-color:
+        linear-gradient(to bottom right, rgba(120,140,255,0.35), rgba(120,140,255,0.12)),
+        rgba(0,0,0,0.06);
+}
+
+.toggle-theme:selected {
+    -fx-background-color:
+        linear-gradient(to bottom right, #566aff, #7a4dff),
+        rgba(0,0,0,0.08);
+    -fx-text-fill: white;
+}
+
+.toggle-theme .text { -fx-translate-y: -1; }

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane fx:controller="com.spacekeeperfx.ui.MainController"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:id="root"
+            styleClass="app-root">
+    <top>
+        <HBox spacing="12" styleClass="toolbar">
+            <Label fx:id="vaultNameLabel" text="My Vault" styleClass="app-title"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+
+            <Button fx:id="newVaultButton" text="New Vault"/>
+            <Separator orientation="VERTICAL"/>
+
+            <Button fx:id="openVaultButton"  text="Open Vault"/>
+            <Button fx:id="closeVaultButton" text="Close"/>
+            <Separator orientation="VERTICAL"/>
+
+            <Button fx:id="newSubspaceButton"   text="+ Subspace"/>
+            <Separator orientation="VERTICAL"/>
+
+            <Button fx:id="manageColumnsButton" text="Columns"/>
+            <Separator orientation="VERTICAL"/>
+
+            <Button fx:id="addRecordButton"     text="+ Row" styleClass="primary"/>
+            <Button fx:id="deleteRecordButton"  text="Delete" styleClass="danger"/>
+            <Separator orientation="VERTICAL"/>
+
+            <ToggleButton fx:id="themeToggle"
+                          text="☾"
+                          selected="true"
+                          styleClass="icon-btn theme-toggle"
+                          focusTraversable="false"/>
+        </HBox>
+
+    </top>
+
+    <!-- Center: split between collapsible sidebar and table area -->
+    <center>
+        <SplitPane fx:id="mainSplit" dividerPositions="0.22">
+            <items>
+                <!-- Sidebar -->
+                <AnchorPane fx:id="sidebarPane" minWidth="180.0" maxWidth="-Infinity">
+                    <children>
+                        <fx:include source="sidebar.fxml" fx:id="sidebar"
+                                    AnchorPane.topAnchor="0.0"
+                                    AnchorPane.rightAnchor="0.0"
+                                    AnchorPane.bottomAnchor="0.0"
+                                    AnchorPane.leftAnchor="0.0"/>
+                    </children>
+                </AnchorPane>
+
+                <!-- Content pane -->
+                <AnchorPane styleClass="content-wrap">
+                    <children>
+                        <fx:include source="subspace_table.fxml" fx:id="subspaceTable"
+                                    AnchorPane.topAnchor="0.0"
+                                    AnchorPane.rightAnchor="0.0"
+                                    AnchorPane.bottomAnchor="0.0"
+                                    AnchorPane.leftAnchor="0.0"/>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </center>
+
+    <!-- Bottom status bar -->
+    <bottom>
+        <HBox fx:id="statusBar" alignment="CENTER_LEFT" spacing="8" styleClass="statusbar">
+            <padding><Insets top="8" right="12" bottom="8" left="12"/></padding>
+            <Label fx:id="statusLabel" text="Ready." />
+        </HBox>
+    </bottom>
+</BorderPane>

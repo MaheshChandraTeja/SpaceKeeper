@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<VBox fx:controller="com.spacekeeperfx.ui.SidebarController"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:id="root"
+      spacing="8" styleClass="sidebar">
+    <padding><Insets top="10" right="8" bottom="10" left="8"/></padding>
+
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <Label text="Subspaces" styleClass="muted"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="collapseBtn" text="⟨" focusTraversable="false" styleClass="icon-btn">
+            <tooltip>
+                <Tooltip text="Collapse"/>
+            </tooltip>
+        </Button>
+    </HBox>
+
+    <ListView fx:id="subspaceList" VBox.vgrow="ALWAYS" styleClass="nav-list">
+        <placeholder>
+            <Label text="No subspaces yet"/>
+        </placeholder>
+    </ListView>
+</VBox>

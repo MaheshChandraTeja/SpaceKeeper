@@ -1,0 +1,86 @@
+### Build output (Maven/JavaFX)
+target/
+out/
+*/target/**/app/
+*/target/**/bin/
+*/target/**/lib/
+*/target/**/images/
+*/target/**/installer/
+*/target/**/runtime/
+
+### Maven wrapper (keep wrapper files tracked)
+!.mvn/wrapper/maven-wrapper.jar
+
+### Logs & temp
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.old
+
+# JVM crash dumps / heap dumps
+hs_err_pid*
+replay_pid*
+*.hprof
+
+### Local data & caches (keep versioned samples)
+# your repo has data/samples — keep it; ignore ad-hoc local files
+data/local/
+data/**/*.db
+data/**/*.sqlite
+data/**/*.sqlite3
+data/**/*.log
+.spacekeeper/
+~/.spacekeeper/
+
+### IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+# common noisy files if .idea is partially committed
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/dictionaries/
+.idea/shelf/
+.idea/libraries/
+
+### VS Code
+.vscode/
+
+### Eclipse (if ever opened there)
+.classpath
+.project
+.settings/
+.apt_generated
+.factorypath
+.springBeans
+.sts4-cache
+
+### NetBeans (if ever opened there)
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### OS junk
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+*.lnk
+
+# Coverage / reports
+coverage/
+.jacoco/
+jacoco.exec
+target/site/
+
+~
+data/
+ProjectStructure.txt
