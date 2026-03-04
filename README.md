@@ -1,10 +1,6 @@
 # 🛰️ SpaceKeeperFX
 
 <p align="center">
-  <img src="src/main/resources/icons/app.png" alt="SpaceKeeperFX Logo" width="120" />
-</p>
-
-<p align="center">
   <b>Local-first vault and record manager built with JavaFX + SQLite.</b><br/>
   Organize data into Vaults and Subspaces, customize columns, and attach photos per record.
 </p>
@@ -210,7 +206,21 @@ If you open an issue, include:
 
 ---
 
-## 👤 Author
+## 🏢 About
 
-Built by [MaheshChandraTeja](https://github.com/MaheshChandraTeja)
+**Built by**  
+**Mahesh Chandra Teja Garnepudi**  
+**Sagarika Srivastava**
 
+**Organization**  
+**Kairais Tech**  
+https://www.kairais.com
+
+---
+
+## 📄 License
+
+SpaceKeeper is proprietary software.  
+Third‑party dependencies are licensed under their respective terms and used in compliance.
+
+---
